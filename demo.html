@@ -5,6 +5,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>On Screen Keyboard demo</title>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="onScreenKeyboard.css">
 		<style>
 			html {
@@ -33,7 +35,6 @@
 	</head>
 
 	<body>
-
 		<form id="input_container" action="demo.html">
 			<input type="text" id="input1" class="osk-trigger" placeholder="disable return" data-osk-options="disableReturn">
 			<input type="text" id="input2" class="osk-trigger" placeholder="disable symbols" data-osk-options="disableSymbols">
@@ -41,14 +42,22 @@
 			<textarea id="input4" class="osk-trigger" placeholder="enable everything"></textarea>
 		</form>
 
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script src="jquery.onScreenKeyboard.js"></script>
+
 		<script>
 			$(function () {
 				$('#input_container').children('.osk-trigger').onScreenKeyboard({
 					rewireReturn : 'submit',
-					rewireTab : true
+					rewireTab : true,
+					draggable: true
 				});
+			});
+		</script>
+		<script>
+			$(function () {
+				$("#draggable").draggable();
 			});
 		</script>
 
